@@ -215,8 +215,8 @@
   <https://w3id.org/gbfs#bikes_available> 1;
   <https://w3id.org/gbfs#docks_in_use> 0 .
 
-<https://blue-bike.be/stations/131#2022-02-28T20:56:39> a <https://w3id.org/gbfs#Station>;
-  <http://purl.org/dc/terms/created> "2022-02-28T20:56:39";
+<https://blue-bike.be/stations/131#2022-02-28T20:56:56> a <https://w3id.org/gbfs#Station>;
+  <http://purl.org/dc/terms/created> "2022-02-28T20:56:56";
   <http://purl.org/dc/terms/isVersionOf> <https://blue-bike.be/stations/131>;
   <http://schema.org/name> "Station Leuven (Kop van Kessel-Lo)";
   <http://www.w3.org/2003/01/geo/wgs84_pos#latitude> "50.882490000000"^^<http://www.w3.org/2001/XMLSchema#float>;
@@ -260,8 +260,8 @@
   <https://w3id.org/gbfs#bikes_available> 8;
   <https://w3id.org/gbfs#docks_in_use> 1 .
 
-<https://blue-bike.be/stations/137#2022-02-28T20:51:43> a <https://w3id.org/gbfs#Station>;
-  <http://purl.org/dc/terms/created> "2022-02-28T20:51:43";
+<https://blue-bike.be/stations/137#2022-02-28T20:56:43> a <https://w3id.org/gbfs#Station>;
+  <http://purl.org/dc/terms/created> "2022-02-28T20:56:43";
   <http://purl.org/dc/terms/isVersionOf> <https://blue-bike.be/stations/137>;
   <http://schema.org/name> "Station Heverlee";
   <http://www.w3.org/2003/01/geo/wgs84_pos#latitude> "50.862615000000"^^<http://www.w3.org/2001/XMLSchema#float>;
@@ -278,8 +278,8 @@
   <https://w3id.org/gbfs#bikes_available> 5;
   <https://w3id.org/gbfs#docks_in_use> 0 .
 
-<https://blue-bike.be/stations/140#2022-02-28T20:52:00> a <https://w3id.org/gbfs#Station>;
-  <http://purl.org/dc/terms/created> "2022-02-28T20:52:00";
+<https://blue-bike.be/stations/140#2022-02-28T20:57:01> a <https://w3id.org/gbfs#Station>;
+  <http://purl.org/dc/terms/created> "2022-02-28T20:57:01";
   <http://purl.org/dc/terms/isVersionOf> <https://blue-bike.be/stations/140>;
   <http://schema.org/name> "Mobipunt Gavere";
   <http://www.w3.org/2003/01/geo/wgs84_pos#latitude> "50.930522000000"^^<http://www.w3.org/2001/XMLSchema#float>;
@@ -637,8 +637,8 @@
   <https://w3id.org/gbfs#bikes_available> 0;
   <https://w3id.org/gbfs#docks_in_use> 0 .
 
-<https://blue-bike.be/stations/48#2022-02-28T20:51:57> a <https://w3id.org/gbfs#Station>;
-  <http://purl.org/dc/terms/created> "2022-02-28T20:51:57";
+<https://blue-bike.be/stations/48#2022-02-28T20:56:57> a <https://w3id.org/gbfs#Station>;
+  <http://purl.org/dc/terms/created> "2022-02-28T20:56:57";
   <http://purl.org/dc/terms/isVersionOf> <https://blue-bike.be/stations/48>;
   <http://schema.org/name> "Station Antwerpen-Centraal";
   <http://www.w3.org/2003/01/geo/wgs84_pos#latitude> "51.217611000000"^^<http://www.w3.org/2001/XMLSchema#float>;
@@ -772,8 +772,8 @@
   <https://w3id.org/gbfs#bikes_available> 65;
   <https://w3id.org/gbfs#docks_in_use> 6 .
 
-<https://blue-bike.be/stations/65#2022-02-28T20:51:52> a <https://w3id.org/gbfs#Station>;
-  <http://purl.org/dc/terms/created> "2022-02-28T20:51:52";
+<https://blue-bike.be/stations/65#2022-02-28T20:56:53> a <https://w3id.org/gbfs#Station>;
+  <http://purl.org/dc/terms/created> "2022-02-28T20:56:53";
   <http://purl.org/dc/terms/isVersionOf> <https://blue-bike.be/stations/65>;
   <http://schema.org/name> "Station Oostende";
   <http://www.w3.org/2003/01/geo/wgs84_pos#latitude> "51.228306000000"^^<http://www.w3.org/2001/XMLSchema#float>;
@@ -977,11 +977,11 @@
     <https://blue-bike.be/stations/123#2022-02-28T20:53:48>, <https://blue-bike.be/stations/124#2022-02-28T20:55:10>,
     <https://blue-bike.be/stations/125#2022-02-28T20:55:19>, <https://blue-bike.be/stations/127#2022-02-28T20:56:24>,
     <https://blue-bike.be/stations/128#2022-02-28T20:53:29>, <https://blue-bike.be/stations/129#2022-02-28T20:55:17>,
-    <https://blue-bike.be/stations/130#2022-02-28T20:53:31>, <https://blue-bike.be/stations/131#2022-02-28T20:56:39>,
+    <https://blue-bike.be/stations/130#2022-02-28T20:53:31>, <https://blue-bike.be/stations/131#2022-02-28T20:56:56>,
     <https://blue-bike.be/stations/132#2022-02-28T20:53:10>, <https://blue-bike.be/stations/133#2022-02-28T20:53:15>,
     <https://blue-bike.be/stations/135#2022-02-28T20:54:16>, <https://blue-bike.be/stations/136#2022-02-28T20:52:27>,
-    <https://blue-bike.be/stations/137#2022-02-28T20:51:43>, <https://blue-bike.be/stations/139#2022-02-28T20:55:29>,
-    <https://blue-bike.be/stations/140#2022-02-28T20:52:00>, <https://blue-bike.be/stations/141#2022-02-28T20:52:25>,
+    <https://blue-bike.be/stations/137#2022-02-28T20:56:43>, <https://blue-bike.be/stations/139#2022-02-28T20:55:29>,
+    <https://blue-bike.be/stations/140#2022-02-28T20:57:01>, <https://blue-bike.be/stations/141#2022-02-28T20:52:25>,
     <https://blue-bike.be/stations/142#2022-02-28T20:53:03>, <https://blue-bike.be/stations/143#2022-02-28T20:56:38>,
     <https://blue-bike.be/stations/144#>, <https://blue-bike.be/stations/145#>, <https://blue-bike.be/stations/146#>,
     <https://blue-bike.be/stations/147#>, <https://blue-bike.be/stations/148#>, <https://blue-bike.be/stations/149#>,
@@ -997,14 +997,14 @@
     <https://blue-bike.be/stations/177#>, <https://blue-bike.be/stations/178#2022-02-28T20:53:54>,
     <https://blue-bike.be/stations/179#>, <https://blue-bike.be/stations/180#>, <https://blue-bike.be/stations/181#>,
     <https://blue-bike.be/stations/182#>, <https://blue-bike.be/stations/183#>, <https://blue-bike.be/stations/184#>,
-    <https://blue-bike.be/stations/48#2022-02-28T20:51:57>, <https://blue-bike.be/stations/49#2022-02-28T20:54:51>,
+    <https://blue-bike.be/stations/48#2022-02-28T20:56:57>, <https://blue-bike.be/stations/49#2022-02-28T20:54:51>,
     <https://blue-bike.be/stations/50#2022-02-28T20:55:35>, <https://blue-bike.be/stations/51#2022-02-28T20:55:15>,
     <https://blue-bike.be/stations/52#2022-02-28T20:55:55>, <https://blue-bike.be/stations/53#2022-02-28T20:55:45>,
     <https://blue-bike.be/stations/54#2022-02-28T20:53:10>, <https://blue-bike.be/stations/55#2022-02-28T20:54:22>,
     <https://blue-bike.be/stations/57#2022-02-28T20:53:56>, <https://blue-bike.be/stations/59#2022-02-28T20:56:06>,
     <https://blue-bike.be/stations/60#2022-02-28T20:56:17>, <https://blue-bike.be/stations/61#2022-02-28T20:53:25>,
     <https://blue-bike.be/stations/62#2022-02-28T20:55:14>, <https://blue-bike.be/stations/63#2022-02-28T20:53:13>,
-    <https://blue-bike.be/stations/64#2022-02-28T20:52:59>, <https://blue-bike.be/stations/65#2022-02-28T20:51:52>,
+    <https://blue-bike.be/stations/64#2022-02-28T20:52:59>, <https://blue-bike.be/stations/65#2022-02-28T20:56:53>,
     <https://blue-bike.be/stations/66#2022-02-28T20:56:04>, <https://blue-bike.be/stations/68#2022-02-28T20:56:39>,
     <https://blue-bike.be/stations/69#2022-02-28T20:53:49>, <https://blue-bike.be/stations/70#2022-02-28T20:54:23>,
     <https://blue-bike.be/stations/71#2022-02-28T20:54:50>, <https://blue-bike.be/stations/72#2022-02-28T20:53:21>,
