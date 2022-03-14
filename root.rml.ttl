@@ -12,7 +12,7 @@
 
 <#TargetDump> a rmlt:LogicalTarget;
   rmlt:target [ a void:Dataset;
-    void:dataDump <file://./history/root.ttl>;
+    void:dataDump <file://./root.ttl>;
   ];
   rmlt:serialization formats:Turtle;
 .

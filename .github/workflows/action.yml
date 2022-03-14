@@ -23,7 +23,7 @@ jobs:
           sed -i "s/SECRET_URL_BLUEBIKE_API/$BLUEBIKE_API_URL/g" private-security-data.rml.ttl
 
       # Generate RDF using RMLMapper
-      - run: mkdir public
+      - run: mkdir -p public/history
       - run: wget https://github.com/RMLio/rmlmapper-java/releases/download/v5.0.0/rmlmapper-5.0.0-r362-all.jar
       - run: java -jar rmlmapper-5.0.0-r362-all.jar -m mapping-webapi-official.rml.ttl -psd private-security-data.rml.ttl
       # History
@@ -33,12 +33,13 @@ jobs:
       - run: |
           echo "timestamp,file" > list.csv
           cd history
-          find . -type f -fprintf /dev/stdout "%CY-%Cm-%CdT%CT,%p\n" >> ../list.csv
+          find . -type f -fprintf /dev/stdout "%CY-%Cm-%CdT%CT,%p\n" | sed 's/\.\///g' >> ../list.csv
           cd ..
       # generate root.ttl
       - run: java -jar rmlmapper-5.0.0-r362-all.jar -m root.rml.ttl
       # make everything public
-      - run: cp ./history/*.ttl ./public/
+      - run: cp ./history/*.ttl ./public/history/
+      - run: cp root.ttl ./public/root.ttl
       - run: |
           # setup the username and email.
           git config user.name "Pieter's GitHub Actions Bot"
