@@ -27,13 +27,14 @@ jobs:
       - run: wget https://github.com/RMLio/rmlmapper-java/releases/download/v5.0.0/rmlmapper-5.0.0-r362-all.jar
       - run: java -jar rmlmapper-5.0.0-r362-all.jar -m mapping-webapi-official.rml.ttl -psd private-security-data.rml.ttl
       # History
-      - run: echo "DATE=$(date '+%Y%d%mT%H%M%S')" >> $GITHUB_ENV
+      - run: echo "DATE=$(date '+%Y%m%dT%H%M%S')" >> $GITHUB_ENV
       - run: cp ./public/bluebike.ttl "./public/${{ env.DATE }}.ttl"
       - run: cp ./public/*.ttl ./history
+      - run: cp ./history/*.ttl ./public
       # generate file list.
       - run: |
           echo "file" > list.csv
-          find history -type f -fprintf /dev/stdout "%p\n" >> list.csv
+          find history -type f -fprintf /dev/stdout "%CY-%Cm-%CdT%CT,%p\n" >> list.csv
       # generate root.ttl
       - run: |
           java -jar rmlmapper-5.0.0-r362-all.jar -m root.rml.ttl

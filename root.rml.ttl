@@ -26,14 +26,48 @@
   ];
 
   rr:subjectMap [ 
-    rr:template "http://pieter.pm/RML-LDES-prototype/root.ttl";
+    rr:template "https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/root.ttl";
     rml:logicalTarget <#TargetDump>;
   ]; 
 	
   rr:predicateObjectMap [ 
-    rr:predicate tree:member; 
+    rr:predicate tree:relation; 
     rr:objectMap [
-      rr:template "https://pieter.pm/RML-LDES-prototype/{file}";
-      rr:termType rr:IRI;
+      rml:reference "file";
+      rr:termType rr:BlankNode;
     ]
   ].
+
+<TriplesMap2>
+  a rr:TriplesMap;
+    
+  rml:logicalSource [ 
+    rml:source "list.csv";
+    rml:referenceFormulation ql:CSV 
+  ];
+
+  rr:subjectMap [ 
+    rml:reference "file";
+    rr:termType rr:BlankNode;
+    rr:class tree:GreaterThanOrEqualToRelation;
+    rml:logicalTarget <#TargetDump>;
+  ]; 
+	
+  rr:predicateObjectMap [ 
+    rr:predicate tree:path; 
+    rr:object dcterms:created;
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate tree:value; 
+    rr:objectMap [ rml:reference "timestamp"; rr:datatype xsd:dateTime; ];
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate tree:node; 
+    rr:objectMap [
+      rr:template "https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/{file}";
+      rr:termType rr:IRI;
+    ];
+  ]
+.
