@@ -46,6 +46,7 @@ jobs:
           git config user.email "<bot@pieter.pm>"
       - run: |
           # commit
+          git add root.ttl
           git add history
           git commit -m "history: update ${{ env.DATE }}"
           git push origin master
