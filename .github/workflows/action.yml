@@ -28,9 +28,8 @@ jobs:
       - run: java -jar rmlmapper-5.0.0-r362-all.jar -m mapping-webapi-official.rml.ttl -psd private-security-data.rml.ttl
       # History
       - run: echo "DATE=$(date '+%Y%m%dT%H%M%S')" >> $GITHUB_ENV
-      - run: cp ./public/bluebike.ttl "./public/${{ env.DATE }}.ttl"
-      - run: cp ./public/*.ttl ./history
-      - run: cp ./history/*.ttl ./public
+      - run: cp ./history/bluebike.ttl "./history/${{ env.DATE }}.ttl"
+      - run: cp ./history/*.ttl ./public/
       # generate file list.
       - run: |
           echo "file" > list.csv

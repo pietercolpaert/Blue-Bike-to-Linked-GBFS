@@ -31,14 +31,14 @@
 # However, you have to provide the regular file as well.
 <#TargetDump> a rmlt:LogicalTarget;
   rmlt:target [ a void:Dataset;
-    void:dataDump <file://./public/bluebike-webapi.ttl>;
+    void:dataDump <file://./history/bluebike-webapi.ttl>;
   ];
   rmlt:serialization formats:Turtle;
 .
 
 <#TargetDumpGzip> a rmlt:LogicalTarget;
   rmlt:target [ a void:Dataset;
-    void:dataDump <file://./public/bluebike-webapi.ttl.gz>;
+    void:dataDump <file://./history/bluebike-webapi.ttl.gz>;
   ];
   rmlt:serialization formats:Turtle;
   rmlt:compression comp:gzip;

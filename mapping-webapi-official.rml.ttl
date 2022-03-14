@@ -31,7 +31,7 @@
 
 <#TargetDump> a rmlt:LogicalTarget;
   rmlt:target [ a void:Dataset;
-    void:dataDump <file://./public/bluebike.ttl>;
+    void:dataDump <file://./history/bluebike.ttl>;
   ];
   rmlt:serialization formats:Turtle;
 .
