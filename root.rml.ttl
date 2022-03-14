@@ -66,7 +66,7 @@
   rr:predicateObjectMap [ 
     rr:predicate tree:node; 
     rr:objectMap [
-      rr:template "https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/{file}";
+      rr:template "https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/{file}";
       rr:termType rr:IRI;
     ];
   ]

@@ -34,7 +34,9 @@ jobs:
       # generate file list.
       - run: |
           echo "file" > list.csv
-          find history -type f -fprintf /dev/stdout "%CY-%Cm-%CdT%CT,%p\n" >> list.csv
+          cd history
+          find . -type f -fprintf /dev/stdout "%CY-%Cm-%CdT%CT,%p\n" >> ../list.csv
+          cd ..
       # generate root.ttl
       - run: |
           java -jar rmlmapper-5.0.0-r362-all.jar -m root.rml.ttl
