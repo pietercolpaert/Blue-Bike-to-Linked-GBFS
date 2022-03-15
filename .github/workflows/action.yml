@@ -28,11 +28,11 @@ jobs:
       - run: java -jar rmlmapper-5.0.0-r362-all.jar -m mapping-webapi-official.rml.ttl -psd private-security-data.rml.ttl
       # History
       - run: echo "DATE=$(date '+%Y%m%dT%H%M%S')" >> $GITHUB_ENV
-      - run: cp ./history/bluebike.ttl "./history/${{ env.DATE }}.ttl"
-      # generate file list.
+      - run: echo "FILE=$(echo ${{ env.DATE }} | sed 's/-//' | sed 's/://')" >> $GITHUB_ENV
+      - run: cp ./history/bluebike.ttl "./history/${{ env.FILE }}.ttl"
+      # append to file list.
       - run: |
-          echo "timestamp,file" > list.csv
-          git ls-files -z history | xargs -0 -n1 -I{} -- git log -n1 --pretty='format:%cd' --date=format:'%Y-%m-%dT%H:%M:%S,{}%n' >> list.csv
+          echo "${{ env.DATE }},${{ env.FILE }}.ttl" >> list.csv
       # generate root.ttl
       - run: java -jar rmlmapper-5.0.0-r362-all.jar -m root.rml.ttl
       # make everything public
@@ -45,6 +45,7 @@ jobs:
       - run: |
           # commit
           git add root.ttl
+          git add list.csv
           git add history
           git commit -m "history: update ${{ env.DATE }}"
           git push origin master
