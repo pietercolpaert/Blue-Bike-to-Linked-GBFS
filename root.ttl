@@ -29884,6 +29884,11 @@ _:20220423T0558462ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
   <https://w3id.org/tree#path> <http://purl.org/dc/terms/created>;
   <https://w3id.org/tree#value> "2022-04-23T05:58:46"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 
+_:20220423T0607002ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
+  <https://w3id.org/tree#node> <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/20220423T060700.ttl>;
+  <https://w3id.org/tree#path> <http://purl.org/dc/terms/created>;
+  <https://w3id.org/tree#value> "2022-04-23T06:07:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
 <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/root.ttl> <https://w3id.org/tree#relation>
     _:20220315T0755142ettl, _:20220315T0755572ettl, _:20220315T0803272ettl, _:20220315T0812592ettl,
     _:20220315T0825032ettl, _:20220315T0835232ettl, _:20220315T0843362ettl, _:20220315T0849492ettl,
@@ -31379,15 +31384,7 @@ _:20220423T0558462ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
     _:20220423T0420062ettl, _:20220423T0433192ettl, _:20220423T0444122ettl, _:20220423T0453172ettl,
     _:20220423T0459342ettl, _:20220423T0507392ettl, _:20220423T0517222ettl, _:20220423T0526282ettl,
     _:20220423T0533192ettl, _:20220423T0540042ettl, _:20220423T0546042ettl, _:20220423T0552232ettl,
-    _:20220423T0558462ettl, _:20220423T0607002ettl .
-
-_:20220423T0607002ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
-  <https://w3id.org/tree#node> <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/20220423T060700.ttl>;
-  <https://w3id.org/tree#path> <http://purl.org/dc/terms/created>;
-  <https://w3id.org/tree#value> "2022-04-23T06:07:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-
-<https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/root.ttl> <https://w3id.org/tree#relation>
-    _:20220423T0617302ettl .
+    _:20220423T0558462ettl, _:20220423T0607002ettl, _:20220423T0617302ettl .
 
 _:20220423T0617302ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
   <https://w3id.org/tree#node> <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/20220423T061730.ttl>;
@@ -31577,3 +31574,11 @@ _:20220423T0933022ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
   <https://w3id.org/tree#node> <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/20220423T093302.ttl>;
   <https://w3id.org/tree#path> <http://purl.org/dc/terms/created>;
   <https://w3id.org/tree#value> "2022-04-23T09:33:02"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/root.ttl> <https://w3id.org/tree#relation>
+    _:20220423T0940142ettl .
+
+_:20220423T0940142ettl a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
+  <https://w3id.org/tree#node> <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/history/20220423T094014.ttl>;
+  <https://w3id.org/tree#path> <http://purl.org/dc/terms/created>;
+  <https://w3id.org/tree#value> "2022-04-23T09:40:14"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
