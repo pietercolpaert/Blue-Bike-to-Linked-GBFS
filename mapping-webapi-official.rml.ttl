@@ -300,11 +300,6 @@
     rr:objectMap [ rr:parentTriplesMap <#RealTimeCapacityMap> ; ]
   ];
 
-  rr:predicateObjectMap [
-    rr:predicate mv:occupancy ;
-    rr:objectMap [ rr:parentTriplesMap #OccupancyMap ; ]
-  ];
-
   # Geo location
   rr:predicateObjectMap [
     rr:predicate locn:geometry  ;
@@ -352,21 +347,6 @@
       rr:datatype xsd:integer ;
     ]
   ].
-
-  <#OccupancyMap>
-  rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#WoTWebAPISource>;
-    rml:referenceFormulation ql:JSONPath;
-    rml:iterator "$.[*]";
-  ];
-  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:Occupancy ; ];
-  rr:predicateObjectMap [
-    rr:predicate mv:currentValue;
-    rr:objectMap [
-      rml:reference "bikes_in_use" ;
-      rr:datatype xsd:integer ;
-    ]
- ].
 
   <#GeoMap>
   rml:logicalSource [ a rml:LogicalSource;
