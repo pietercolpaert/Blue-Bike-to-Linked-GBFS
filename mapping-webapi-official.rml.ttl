@@ -354,7 +354,7 @@
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class schema:Geometry ; ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class schema:GeoCoordinates ; ];
   rr:predicateObjectMap [
     rr:predicate schema:latitude;
     rr:objectMap [ rml:reference "latitude" ; ]
