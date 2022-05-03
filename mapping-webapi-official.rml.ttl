@@ -1,4 +1,4 @@
-# 
+#
 # RML mapping rules for https://datapiloten.be/bluebike/availabilities.geojson
 # (c) Dylan Van Assche (2021)
 # IDLab - Ghent University - imec
@@ -9,15 +9,14 @@
 @prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
 @prefix comp: <http://semweb.mmlab.be/ns/rml-compression#> .
 @prefix formats: <http://www.w3.org/ns/formats/> .
-@prefix gbfs: <https://w3id.org/gbfs#> .
+@prefix mv <http://schema.mobivoc.org/#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix td: <https://www.w3.org/2019/wot/td#> .
 @prefix htv: <http://www.w3.org/2011/http#> .
-@prefix hctl: <https://www.w3.org/2019/wot/hypermedia#> .
+@prefix hctl: <https://www.w3.  org/2019/wot/hypermedia#> .
 @prefix schema: <http://schema.org/> .
 @prefix gtfs: <http://vocab.gtfs.org/terms#> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
 @prefix fno: <https://w3id.org/function/ontology#> .
@@ -26,6 +25,7 @@
 @prefix tree: <https://w3id.org/tree#> .
 @prefix ldes: <https://w3id.org/ldes#> .
 @prefix idlab: <http://example.com/idlab/function/> .
+@prefix locn: <http://www.w3.org/ns/locn#>
 @base <http://example.org/rules/> .
 
 
@@ -150,7 +150,7 @@
 .
 
 <#TreeTriplesMap> a rr:TriplesMap;
-  rml:logicalSource [ 
+  rml:logicalSource [
     rml:source "ldes.json";
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$"
@@ -180,7 +180,7 @@
   # TREE member
   rr:predicateObjectMap [
     rr:predicate tree:member;
-    rr:objectMap [ 
+    rr:objectMap [
       a rr:ObjectMap;
       rr:parentTriplesMap <#StationsTriplesMap>;
       rr:termType rr:IRI;
@@ -204,7 +204,7 @@
     rml:iterator "$.[*]";
   ];
   # Unique IRI generation: $stationId#$generatedAtTime
-  rr:subjectMap [ 
+  rr:subjectMap [
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
@@ -216,13 +216,13 @@
         ];
         rr:predicateObjectMap [
             rr:predicate grel:p_array_a ;
-            rr:objectMap [ 
+            rr:objectMap [
                 fnml:functionValue [
                     rr:predicateObjectMap [
                         rr:predicate fno:executes ;
                         rr:objectMap [ rr:constant grel:array_join ]
                     ];
-            
+
                     rr:predicateObjectMap [
                         rr:predicate grel:p_array_a ;
                         rr:objectMap [ rr:constant "#" ]
@@ -251,7 +251,7 @@
         ];
         rr:predicateObjectMap [
           rr:predicate grel:bool_b ;
-          rr:objectMap [ 
+          rr:objectMap [
             fnml:functionValue [
               rr:predicateObjectMap [
                 rr:predicate fno:executes;
@@ -271,11 +271,11 @@
         ];
         rr:predicateObjectMap [
           rr:predicate grel:any_true ;
-          rr:objectMap [ rr:constant "https://w3id.org/gbfs#Station"; rr:termType rr:IRI ]
+          rr:objectMap [ rr:constant mv:BicycleParkingStation ; rr:termType rr:IRI ]
         ];
         rr:predicateObjectMap [
           rr:predicate grel:any_false ;
-          rr:objectMap [ rr:constant "https://w3id.org/gbfs#Station"; rr:termType rr:IRI ]
+          rr:objectMap [ rr:constant mv:BicycleParkingStation ; rr:termType rr:IRI ]
         ];
       ];
       rr:termType rr:IRI;
@@ -283,32 +283,32 @@
   ];
 
   # BlueBike station: name
-  rr:predicateObjectMap [ 
-    rr:predicate schema:name ; 
+  rr:predicateObjectMap [
+    rr:predicate schema:name ;
     rr:objectMap [ rml:reference "name"; rr:datatype xsd:string; ]
   ];
 
-  # BlueBike station: available bicycles
-  rr:predicateObjectMap [ 
-    rr:predicate gbfs:bikes_available ; 
-    rr:objectMap [ rml:reference "bikes_available"; rr:datatype xsd:integer; ]
+  # BlueBike station:maximum capacity
+  rr:predicateObjectMap [
+    rr:predicate mv:capacity ;
+    rr:objectMap [ rr:parentTriplesMap <#CapacityMap> ; ]
   ];
 
-  # BlueBike station: available docks = bikes_in_use
-  rr:predicateObjectMap [ 
-    rr:predicate gbfs:docks_in_use ; 
-    rr:objectMap [ rml:reference "bikes_in_use"; rr:datatype xsd:integer; ]
+  # BlueBike station: available bicycles
+  rr:predicateObjectMap [
+    rr:predicate mv:capacity ;
+    rr:objectMap [ rr:parentTriplesMap <#RealTimeCapacityMap> ; ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate mv:occupancy ;
+    rr:objectMap [ rr:parentTriplesMap #OccupancyMap ; ]
   ];
 
   # Geo location
-  rr:predicateObjectMap [ 
-    rr:predicate geo:latitude ; 
-    rr:objectMap [ rml:reference "latitude"; rr:datatype xsd:float; ]
-  ];
-
-  rr:predicateObjectMap [ 
-    rr:predicate geo:longitude ; 
-    rr:objectMap [ rml:reference "longitude"; rr:datatype xsd:float; ]
+  rr:predicateObjectMap [
+    rr:predicate locn:geometry  ;
+    rr:objectMap [ rr:parentTriplesMap #GeoMap ; ]
   ];
 
   # Versioning
@@ -322,3 +322,64 @@
     rr:objectMap [ rr:template "https://blue-bike.be/stations/{id}"; rr:termType rr:IRI; ]
   ];
 .
+
+  <#CapacityMap>
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source <#WoTWebAPISource>;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:Capacity ; ];
+  rr:predicateObjectMap [
+    rr:predicate mv:totalCapacity;
+    rr:objectMap [
+      rml:reference "capacity" ;
+      rr:datatype xsd:integer ;
+    ]
+  ].
+
+  <#RealTimeCapacityMap>
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source <#WoTWebAPISource>;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:RealTimeCapacity ; ];
+  rr:predicateObjectMap [
+    rr:predicate mv:currentValue;
+    rr:objectMap [
+      rml:reference "bikes_available" ;
+      rr:datatype xsd:integer ;
+    ]
+  ].
+
+  <#OccupancyMap>
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source <#WoTWebAPISource>;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:Occupancy ; ];
+  rr:predicateObjectMap [
+    rr:predicate mv:currentValue;
+    rr:objectMap [
+      rml:reference "bikes_in_use" ;
+      rr:datatype xsd:integer ;
+    ]
+ ].
+
+  <#GeoMap>
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source <#WoTWebAPISource>;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class schema:Geometry ; ];
+  rr:predicateObjectMap [
+    rr:predicate schema:latitude;
+    rr:objectMap [ rml:reference "latitude" ; ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate schema:longitude;
+    rr:objectMap [ rml:reference "longitude" ; ]
+  ].
