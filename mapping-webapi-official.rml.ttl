@@ -26,6 +26,8 @@
 @prefix ldes: <https://w3id.org/ldes#> .
 @prefix idlab: <http://example.com/idlab/function/> .
 @prefix locn: <http://www.w3.org/ns/locn#>
+@prefix clv: <http://data.europa.eu/m8g/>
+@prefix geo: <http://www.opengis.net/ont/geosparql#>
 @base <http://example.org/rules/> .
 
 
@@ -288,13 +290,7 @@
     rr:objectMap [ rml:reference "name"; rr:datatype xsd:string; ]
   ];
 
-  # BlueBike station:maximum capacity
-  rr:predicateObjectMap [
-    rr:predicate mv:capacity ;
-    rr:objectMap [ rr:parentTriplesMap <#CapacityMap> ; ]
-  ];
-
-  # BlueBike station: available bicycles
+  # BlueBike station: RealTimeCapacity bicycles
   rr:predicateObjectMap [
     rr:predicate mv:capacity ;
     rr:objectMap [ rr:parentTriplesMap <#RealTimeCapacityMap> ; ]
@@ -318,34 +314,27 @@
   ];
 .
 
-  <#CapacityMap>
-  rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#WoTWebAPISource>;
-    rml:referenceFormulation ql:JSONPath;
-    rml:iterator "$.[*]";
-  ];
-  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:Capacity ; ];
-  rr:predicateObjectMap [
-    rr:predicate mv:totalCapacity;
-    rr:objectMap [
-      rml:reference "capacity" ;
-      rr:datatype xsd:integer ;
-    ]
-  ].
-
   <#RealTimeCapacityMap>
   rml:logicalSource [ a rml:LogicalSource;
     rml:source <#WoTWebAPISource>;
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:RealTimeCapacity ; ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class mv:RealTimeCapacity ; rml:logicalTarget <#TargetDump>;];
   rr:predicateObjectMap [
     rr:predicate mv:currentValue;
     rr:objectMap [
       rml:reference "bikes_available" ;
       rr:datatype xsd:integer ;
     ]
+  ];
+
+  rr:predicateObjectMap [
+      rr:predicate mv:totalCapacity;
+      rr:objectMap [
+        rml:reference "capacity" ;
+        rr:datatype xsd:integer ;
+      ]
   ].
 
   <#GeoMap>
@@ -354,12 +343,17 @@
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class schema:GeoCoordinates ; ];
+  rr:subjectMap [ rr:termType rr:BlankNode ; rr:class locn:Geometry ; rml:logicalTarget <#TargetDump>; ];
   rr:predicateObjectMap [
-    rr:predicate schema:latitude;
+    rr:predicate clv:latitude;
     rr:objectMap [ rml:reference "latitude" ; ]
   ];
   rr:predicateObjectMap [
-    rr:predicate schema:longitude;
+    rr:predicate clv:longitude;
     rr:objectMap [ rml:reference "longitude" ; ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate geo:asWKT ;
+      rr:objectMap [ rr:template "Point({longitude} {latitude})" ; rr:datatype geo:wktLiteral;]
   ].
+
