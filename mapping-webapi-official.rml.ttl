@@ -346,11 +346,11 @@
   rr:subjectMap [ rr:termType rr:BlankNode ; rr:class locn:Geometry ; rml:logicalTarget <#TargetDump>; ];
   rr:predicateObjectMap [
     rr:predicate clv:latitude;
-    rr:objectMap [ rml:reference "latitude" ; ]
+    rr:objectMap [ rml:reference "latitude" ; rr:datatype xsd:string]
   ];
   rr:predicateObjectMap [
     rr:predicate clv:longitude;
-    rr:objectMap [ rml:reference "longitude" ; ]
+    rr:objectMap [ rml:reference "longitude" ; rr:datatype xsd:string]
   ];
   rr:predicateObjectMap [
       rr:predicate geo:asWKT ;
