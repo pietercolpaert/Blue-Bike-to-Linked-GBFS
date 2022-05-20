@@ -1,7 +1,9 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
 <https://pieter.pm/Blue-Bike-to-Linked-GBFS/bluebike.ttl#eventstream> a <https://w3id.org/ldes#EventStream>;
     <https://w3id.org/tree#view> <https://www.pieter.pm/Blue-Bike-to-Linked-GBFS/root.ttl> ;
     <https://w3id.org/ldes#retentionPolicy> <https://pieter.pm/Blue-Bike-to-Linked-GBFS/bluebike.ttl#retention> .
 
-<https://pieter.pm/Blue-Bike-to-Linked-GBFS/bluebike.ttl#retention> a <https://w3id.org/ldes#DurationAgoPolicy >;
+<https://pieter.pm/Blue-Bike-to-Linked-GBFS/bluebike.ttl#retention> a <https://w3id.org/ldes#DurationAgoPolicy>;
   <https://w3id.org/tree#value> "P1Y"^^xsd:duration;
   <https://w3id.org/ldes#timestampPath> <http://purl.org/dc/terms/created> .
