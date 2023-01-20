@@ -1,7 +1,7 @@
 name: BlueBike API publishing
 on:
   schedule:
-    - cron: "*/5 * * * *"
+#    - cron: "*/5 * * * *"
   repository_dispatch:
     types: [push]
   workflow_dispatch:
